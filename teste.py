@@ -11,6 +11,7 @@ from emot.emo_unicode import EMOTICONS_EMO
 emojis=dict()
 result=dict()
 emoticons=dict()
+taxonomia=dict()
 rawEmojis = {
   ":)" : "😀",
   "=)" : "😀",
@@ -53,6 +54,13 @@ def convert_emoticons_to_emoji(text):
 def convert_emoticons_to_text(text):
   return emoji.demojize(convert_emoticons_to_emoji(text))
 
+def find_taxonomia(text):
+  result=dict()
+  aux=extract_emojis(text)
+  for emoj in aux:
+    taxonomia[emoj]= adv.emoji_search(emoj)['group'][0]
+  return result
+
 with open('Tweets_pt_pt.csv', 'r',encoding="utf-8") as file:
   reader = csv.DictReader(file, skipinitialspace=True)
   aux=0
@@ -63,13 +71,17 @@ with open('Tweets_pt_pt.csv', 'r',encoding="utf-8") as file:
     has_emoji = bool(emoji.get_emoji_regexp().search(l['tweet_text']))
     if(has_emoji):
       emojis[str(l['id'])]=str(l['tweet_text'])
-    if(aux==10000):
+    if(aux==100):
        break 
 
 for key, value in emojis.items():
   result[str(key)]=extract_emojis(value)
+  for emoj in result[str(key)]:
+    taxonomia[emoj]= adv.emoji_search(emoj)['group'][0]
+    print(taxonomia)
+
 
 for k,v in emoticons.items():
   for elem in v:
     elem=convert_emoticons_to_emoji(elem)
-    print(elem)
+    #print(elem)
