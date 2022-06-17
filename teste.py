@@ -44,6 +44,12 @@ def find_emoticons(text):
 def extract_emojis(s):
   return ''.join(c for c in s if c in emoji.UNICODE_EMOJI['pt'])
 
+def convert_text_to_emojis(text):
+  return emoji.emojize(text,language='pt')
+
+def convert_emojis_to_text(text):
+  return emoji.demojize(text, language='pt')
+
 def convert_emoticons_to_emoji(text):
   words = text.split(" ")
   outcome = " "
@@ -78,10 +84,7 @@ for key, value in emojis.items():
   result[str(key)]=extract_emojis(value)
   for emoj in result[str(key)]:
     taxonomia[emoj]= adv.emoji_search(emoj)['group'][0]
-    print(taxonomia)
-
 
 for k,v in emoticons.items():
   for elem in v:
     elem=convert_emoticons_to_emoji(elem)
-    #print(elem)
