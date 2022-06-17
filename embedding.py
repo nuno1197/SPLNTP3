@@ -1,13 +1,41 @@
 import gensim
+import emoji
 import csv
+import re
 from gensim.models import Word2Vec 
+
+
+def convert_emoticons_to_emoji(text):
+  words = text.split(" ")
+  outcome = " "
+  for word in words:
+    outcome += rawEmojis.get(word, word) + " "
+  return(outcome)
+
+rawEmojis = {
+  ":)" : "😀",
+  "=)" : "😀",
+  ":(" : "😞",
+  ":D" : "😄",
+  ":/" : "😕",
+  ":'(": "😢",
+  ":P" : "😛",
+  "XD" : "😆",
+  ":3" : "🐱",
+  "DX" : "😫",
+  "d:" : "😦",
+  "XP" : "😝",
+  "D8" : "😱",
+  ":o" : "😯"
+}
 
 f2=open("tweets.txt",'w')
 
 with open('Tweets_pt_pt.csv', 'r',encoding="utf-8") as file:
     tweets = csv.DictReader(file, skipinitialspace=True)  
     for tweet in tweets:
-        f2.write(tweet['tweet_text']+'\n')
+        t = emoji.demojize(convert_emoticons_to_emoji(tweet["tweet_text"]),language='pt')
+        f2.write(t+'\n')
 f2.close()
 
 file=open("tweets.txt",encoding="utf-8")
@@ -18,4 +46,13 @@ for line in file:
 
 model = Word2Vec(sentences=frases,sg=0, workers=5, epochs=20, vector_size=100)
 
-print(model.wv.most_similar("like"))
+def semelhantes(emo):
+    aux=[]
+    a = emoji.demojize(emo, language='pt')
+    b = re.sub(':','',a)
+    res=model.wv.most_similar(b)
+    for (a,b) in res:
+        a = ":" + a + ":"
+        a=emoji.emojize(a,language='pt')
+        aux.append((a,b))
+    return aux
