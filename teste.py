@@ -7,7 +7,8 @@ import re
 import pickle
 import emoji
 from emot.emo_unicode import UNICODE_EMOJI
-from emot.emo_unicode import EMOTICONS_EMO 
+from emot.emo_unicode import EMOTICONS_EMO
+import pandas as pd
 
 emojis=dict()
 result=dict()
@@ -82,6 +83,11 @@ with open('Tweets_pt_pt.csv', 'r',encoding="utf-8") as file:
         emojis[elem].append({'sentimento': a['sentiment_score'],'positividade': a['positive'], 'neutral': a['neutral'], 'negatividade': a['negative']})
       except:
         emojis[elem].append(('sentimento', 'NA'))
+df = pd.DataFrame(data=emojis)
+df = df.fillna(' ').T
+with open('output.html', 'w') as f:
+    f.write(df.to_html())
+
     #if(find_emoticons(tweets['tweet_text'])!=[]):
       #emoticons[str(l['id'])]=find_emoticons(l['tweet_text'])
     #has_emoji = bool(emoji.get_emoji_regexp().search(l['tweet_text']))
