@@ -82,26 +82,14 @@ with open('Tweets_pt_pt.csv', 'r',encoding="utf-8") as file:
         a=get_emoji_sentiment_rank(elem)
         emojis[elem].append({'sentimento': a['sentiment_score'],'positividade': a['positive'], 'neutral': a['neutral'], 'negatividade': a['negative']})
       except:
-        emojis[elem].append(('sentimento', 'NA'))
-df = pd.DataFrame(data=emojis)
-df = df.fillna(' ').T
-with open('output.html', 'w') as f:
-    f.write(df.to_html())
-
-    #if(find_emoticons(tweets['tweet_text'])!=[]):
-      #emoticons[str(l['id'])]=find_emoticons(l['tweet_text'])
-    #has_emoji = bool(emoji.get_emoji_regexp().search(l['tweet_text']))
-    #if(has_emoji):
-    #  emojis[str(l['id'])]=str(l['tweet_text'])
+        emojis[elem].append({'sentimento', 'NA'})
+    df = pd.DataFrame(data=emojis)
+    df = df.fillna(' ').T
+    df.columns = df.columns.astype(str).str.replace('0', 'Taxonomia')
+    df.columns = df.columns.astype(str).str.replace('1', 'Emoji em texto')
+    df.columns = df.columns.astype(str).str.replace('2', 'Sentimento')
+    with open('output.html', 'w') as f:
+        f.write(df.to_html())
     if(aux==3000):
       pprint.pprint(emojis)
       break 
-
-#for key, value in emojis.items():
-#  result[str(key)]=extract_emojis(value)
-#  for emoj in result[str(key)]:
-#    taxonomia[emoj]= adv.emoji_search(emoj)['group'][0]
-
-#for k,v in emoticons.items():
-#  for elem in v:
-#    elem=convert_emoticons_to_emoji(elem)

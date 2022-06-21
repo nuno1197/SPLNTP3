@@ -1,54 +1,480 @@
 <table border="1" class="dataframe">
-       <thead>
-         <tr style="text-align: right;">
-           <th></th>
-           <th>0</th>
-           <th>1</th>
-           <th>2</th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr>
-           <th>♥</th>
-           <td>{'taxonomia': 'Activities'}</td>
-           <td>{'emoji em texto': ':naipe_de_copas:'}</td>
-           <td>{'negatividade': 252.0, 'neutral': 1942.0, 'positividade': 4950.0, 'sentimento': 0.658}</td>
-         </tr>
-         <tr>
-           <th>🏆</th>
-           <td>{'taxonomia': 'Activities'}</td>
-           <td>{'emoji em texto': ':troféu:'}</td>
-           <td>{'negatividade': 6.0, 'neutral': 39.0, 'positividade': 149.0, 'sentimento': 0.737}</td>
-         </tr>
-         <tr>
-           <th>👏</th>
-           <td>{'taxonomia': 'People &amp; Body'}</td>
-           <td>{'emoji em texto': ':mãos_aplaudindo:'}</td>
-           <td>{'negatividade': 243.0, 'neutral': 634.0, 'positividade': 1459.0, 'sentimento': 0.521}</td>
-         </tr>
-         <tr>
-           <th>🔴</th>
-           <td>{'taxonomia': 'Symbols'}</td>
-           <td>{'emoji em texto': ':círculo_vermelho:'}</td>
-           <td>{'negatividade': 1.0, 'neutral': 24.0, 'positividade': 20.0, 'sentimento': 0.422}</td>
-         </tr>
-         <tr>
-           <th>😀</th>
-           <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
-           <td>{'emoji em texto': ':rosto_risonho:'}</td>
-           <td>{'negatividade': 37.0, 'neutral': 114.0, 'positividade': 288.0, 'sentimento': 0.572}</td>
-         </tr>
-         <tr>
-           <th>😄</th>
-           <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
-           <td>{'emoji em texto': ':rosto_risonho_com_olhos_sorridentes:'}</td>
-           <td>{'negatividade': 191.0, 'neutral': 426.0, 'positividade': 781.0, 'sentimento': 0.422}</td>
-         </tr>
-         <tr>
-           <th>😛</th>
-           <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
-           <td>{'emoji em texto': ':rosto_mostrando_a_língua:'}</td>
-           <td>{'negatividade': 18.0, 'neutral': 50.0, 'positividade': 152.0, 'sentimento': 0.609}</td>
-         </tr>
-       </tbody>
-     </table>
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Taxonomia</th>
+      <th>Emoji em texto</th>
+      <th>Sentimento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>😀</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_risonho:'}</td>
+      <td>{'sentimento': 0.572, 'positividade': 288.0, 'neutral': 114.0, 'negatividade': 37.0}</td>
+    </tr>
+    <tr>
+      <th>😄</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_risonho_com_olhos_sorridentes:'}</td>
+      <td>{'sentimento': 0.422, 'positividade': 781.0, 'neutral': 426.0, 'negatividade': 191.0}</td>
+    </tr>
+    <tr>
+      <th>😛</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_mostrando_a_língua:'}</td>
+      <td>{'sentimento': 0.609, 'positividade': 152.0, 'neutral': 50.0, 'negatividade': 18.0}</td>
+    </tr>
+    <tr>
+      <th>♥</th>
+      <td>{'taxonomia': 'Activities'}</td>
+      <td>{'emoji em texto': ':naipe_de_copas:'}</td>
+      <td>{'sentimento': 0.658, 'positividade': 4950.0, 'neutral': 1942.0, 'negatividade': 252.0}</td>
+    </tr>
+    <tr>
+      <th>🔴</th>
+      <td>{'taxonomia': 'Symbols'}</td>
+      <td>{'emoji em texto': ':círculo_vermelho:'}</td>
+      <td>{'sentimento': 0.422, 'positividade': 20.0, 'neutral': 24.0, 'negatividade': 1.0}</td>
+    </tr>
+    <tr>
+      <th>🏆</th>
+      <td>{'taxonomia': 'Activities'}</td>
+      <td>{'emoji em texto': ':troféu:'}</td>
+      <td>{'sentimento': 0.737, 'positividade': 149.0, 'neutral': 39.0, 'negatividade': 6.0}</td>
+    </tr>
+    <tr>
+      <th>👏</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':mãos_aplaudindo:'}</td>
+      <td>{'sentimento': 0.521, 'positividade': 1459.0, 'neutral': 634.0, 'negatividade': 243.0}</td>
+    </tr>
+    <tr>
+      <th>😌</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_aliviado:'}</td>
+      <td>{'sentimento': 0.484, 'positividade': 415.0, 'neutral': 157.0, 'negatividade': 93.0}</td>
+    </tr>
+    <tr>
+      <th>😂</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_chorando_de_rir:'}</td>
+      <td>{'sentimento': 0.221, 'positividade': 6845.0, 'neutral': 4163.0, 'negatividade': 3614.0}</td>
+    </tr>
+    <tr>
+      <th>💜</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':coração_roxo:'}</td>
+      <td>{'sentimento': 0.656, 'positividade': 657.0, 'neutral': 241.0, 'negatividade': 41.0}</td>
+    </tr>
+    <tr>
+      <th>💗</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':coração_crescendo:'}</td>
+      <td>{'sentimento': 0.659, 'positividade': 593.0, 'neutral': 201.0, 'negatividade': 42.0}</td>
+    </tr>
+    <tr>
+      <th>😞</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_desapontado:'}</td>
+      <td>{'sentimento': -0.118, 'positividade': 192.0, 'neutral': 85.0, 'negatividade': 255.0}</td>
+    </tr>
+    <tr>
+      <th>👀</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':olhos:'}</td>
+      <td>{'sentimento': 0.063, 'positividade': 119.0, 'neutral': 198.0, 'negatividade': 93.0}</td>
+    </tr>
+    <tr>
+      <th>💖</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':coração_brilhante:'}</td>
+      <td>{'sentimento': 0.713, 'positividade': 955.0, 'neutral': 254.0, 'negatividade': 54.0}</td>
+    </tr>
+    <tr>
+      <th>😍</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_sorridente_com_olhos_de_coração:'}</td>
+      <td>{'sentimento': 0.678, 'positividade': 4640.0, 'neutral': 1390.0, 'negatividade': 329.0}</td>
+    </tr>
+    <tr>
+      <th>❤</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':coração_vermelho:'}</td>
+      <td>{'sentimento': 0.746, 'positividade': 6361.0, 'neutral': 1334.0, 'negatividade': 355.0}</td>
+    </tr>
+    <tr>
+      <th>💕</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':dois_corações:'}</td>
+      <td>{'sentimento': 0.633, 'positividade': 1618.0, 'neutral': 683.0, 'negatividade': 99.0}</td>
+    </tr>
+    <tr>
+      <th>😕</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_confuso:'}</td>
+      <td>{'sentimento': -0.4, 'positividade': 69.0, 'neutral': 66.0, 'negatividade': 205.0}</td>
+    </tr>
+    <tr>
+      <th>😬</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_expressando_desagrado:'}</td>
+      <td>{'sentimento': 0.196, 'positividade': 99.0, 'neutral': 58.0, 'negatividade': 57.0}</td>
+    </tr>
+    <tr>
+      <th>👍</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':polegar_para_cima:'}</td>
+      <td>{'sentimento': 0.522, 'positividade': 1181.0, 'neutral': 460.0, 'negatividade': 213.0}</td>
+    </tr>
+    <tr>
+      <th>👎</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':polegar_para_baixo:'}</td>
+      <td>{'sentimento': -0.19, 'positividade': 79.0, 'neutral': 51.0, 'negatividade': 128.0}</td>
+    </tr>
+    <tr>
+      <th>😤</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_soltando_vapor_pelo_nariz:'}</td>
+      <td>{'sentimento': -0.211, 'positividade': 88.0, 'neutral': 82.0, 'negatividade': 157.0}</td>
+    </tr>
+    <tr>
+      <th>☺</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_sorridente:'}</td>
+      <td>{'sentimento': 0.658, 'positividade': 1485.0, 'neutral': 449.0, 'negatividade': 128.0}</td>
+    </tr>
+    <tr>
+      <th>😘</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_mandando_um_beijo:'}</td>
+      <td>{'sentimento': 0.702, 'positividade': 2753.0, 'neutral': 702.0, 'negatividade': 193.0}</td>
+    </tr>
+    <tr>
+      <th>💘</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':coração_com_flecha:'}</td>
+      <td>{'sentimento': 0.689, 'positividade': 290.0, 'neutral': 87.0, 'negatividade': 18.0}</td>
+    </tr>
+    <tr>
+      <th>✨</th>
+      <td>{'taxonomia': 'Activities'}</td>
+      <td>{'emoji em texto': ':brilhos:'}</td>
+      <td>{'sentimento': 0.353, 'positividade': 342.0, 'neutral': 463.0, 'negatividade': 43.0}</td>
+    </tr>
+    <tr>
+      <th>🍍</th>
+      <td>{'taxonomia': 'Food &amp; Drink'}</td>
+      <td>{'emoji em texto': ':abacaxi:'}</td>
+      <td>{'sentimento': 0.5, 'positividade': 29.0, 'neutral': 8.0, 'negatividade': 7.0}</td>
+    </tr>
+    <tr>
+      <th>🥀</th>
+      <td>{'taxonomia': 'Animals &amp; Nature'}</td>
+      <td>{'emoji em texto': ':flor_murcha:'}</td>
+      <td>{NA, sentimento}</td>
+    </tr>
+    <tr>
+      <th>🌻</th>
+      <td>{'taxonomia': 'Animals &amp; Nature'}</td>
+      <td>{'emoji em texto': ':girassol:'}</td>
+      <td>{'sentimento': 0.587, 'positividade': 62.0, 'neutral': 41.0, 'negatividade': 1.0}</td>
+    </tr>
+    <tr>
+      <th>📌</th>
+      <td>{'taxonomia': 'Objects'}</td>
+      <td>{'emoji em texto': ':tacha:'}</td>
+      <td>{'sentimento': -0.571, 'positividade': 1.0, 'neutral': 1.0, 'negatividade': 5.0}</td>
+    </tr>
+    <tr>
+      <th>🥓</th>
+      <td>{'taxonomia': 'Food &amp; Drink'}</td>
+      <td>{'emoji em texto': ':bacon:'}</td>
+      <td>{NA, sentimento}</td>
+    </tr>
+    <tr>
+      <th>💛</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':coração_amarelo:'}</td>
+      <td>{'sentimento': 0.713, 'positividade': 454.0, 'neutral': 123.0, 'negatividade': 25.0}</td>
+    </tr>
+    <tr>
+      <th>🤤</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_babando:'}</td>
+      <td>{NA, sentimento}</td>
+    </tr>
+    <tr>
+      <th>🖕</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':dedo_do_meio:'}</td>
+      <td>{NA, sentimento}</td>
+    </tr>
+    <tr>
+      <th>🏻</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':pele_clara:'}</td>
+      <td>{NA, sentimento}</td>
+    </tr>
+    <tr>
+      <th>👉</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':dorso_da_mão_com_dedo_indicador_apontando_para_a_direita:'}</td>
+      <td>{'sentimento': 0.394, 'positividade': 135.0, 'neutral': 137.0, 'negatividade': 20.0}</td>
+    </tr>
+    <tr>
+      <th>👈</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':dorso_da_mão_com_dedo_indicador_apontando_para_a_esquerda:'}</td>
+      <td>{'sentimento': 0.431, 'positividade': 89.0, 'neutral': 71.0, 'negatividade': 14.0}</td>
+    </tr>
+    <tr>
+      <th>🐯</th>
+      <td>{'taxonomia': 'Animals &amp; Nature'}</td>
+      <td>{'emoji em texto': ':rosto_de_tigre:'}</td>
+      <td>{'sentimento': 0.49, 'positividade': 53.0, 'neutral': 43.0, 'negatividade': 4.0}</td>
+    </tr>
+    <tr>
+      <th>😎</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_sorridente_com_óculos_escuros:'}</td>
+      <td>{'sentimento': 0.493, 'positividade': 451.0, 'neutral': 224.0, 'negatividade': 79.0}</td>
+    </tr>
+    <tr>
+      <th>👊</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':soco:'}</td>
+      <td>{'sentimento': 0.229, 'positividade': 226.0, 'neutral': 111.0, 'negatividade': 121.0}</td>
+    </tr>
+    <tr>
+      <th>💥</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':colisão:'}</td>
+      <td>{'sentimento': 0.149, 'positividade': 72.0, 'neutral': 234.0, 'negatividade': 23.0}</td>
+    </tr>
+    <tr>
+      <th>😆</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_risonho_com_olhos_semicerrados:'}</td>
+      <td>{'sentimento': 0.412, 'positividade': 298.0, 'neutral': 148.0, 'negatividade': 81.0}</td>
+    </tr>
+    <tr>
+      <th>🐸</th>
+      <td>{'taxonomia': 'Animals &amp; Nature'}</td>
+      <td>{'emoji em texto': ':sapo:'}</td>
+      <td>{'sentimento': -0.083, 'positividade': 18.0, 'neutral': 30.0, 'negatividade': 24.0}</td>
+    </tr>
+    <tr>
+      <th>💞</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':corações_girando:'}</td>
+      <td>{'sentimento': 0.742, 'positividade': 537.0, 'neutral': 123.0, 'negatividade': 27.0}</td>
+    </tr>
+    <tr>
+      <th>🌙</th>
+      <td>{'taxonomia': 'Travel &amp; Places'}</td>
+      <td>{'emoji em texto': ':lua_crescente:'}</td>
+      <td>{'sentimento': 0.621, 'positividade': 39.0, 'neutral': 16.0, 'negatividade': 3.0}</td>
+    </tr>
+    <tr>
+      <th>📺</th>
+      <td>{'taxonomia': 'Objects'}</td>
+      <td>{'emoji em texto': ':televisão:'}</td>
+      <td>{'sentimento': 0.405, 'positividade': 18.0, 'neutral': 16.0, 'negatividade': 3.0}</td>
+    </tr>
+    <tr>
+      <th>🍯</th>
+      <td>{'taxonomia': 'Food &amp; Drink'}</td>
+      <td>{'emoji em texto': ':pote_de_mel:'}</td>
+      <td>{'sentimento': 0.053, 'positividade': 8.0, 'neutral': 4.0, 'negatividade': 7.0}</td>
+    </tr>
+    <tr>
+      <th>😁</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_contente_com_olhos_sorridentes:'}</td>
+      <td>{'sentimento': 0.45, 'positividade': 1263.0, 'neutral': 648.0, 'negatividade': 278.0}</td>
+    </tr>
+    <tr>
+      <th>🤦</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':pessoa_decepcionada:'}</td>
+      <td>{NA, sentimento}</td>
+    </tr>
+    <tr>
+      <th>🏽</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':pele_morena:'}</td>
+      <td>{NA, sentimento}</td>
+    </tr>
+    <tr>
+      <th>♂</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':símbolo_de_masculino:'}</td>
+      <td>{'sentimento': 0.2, 'positividade': 1.0, 'neutral': 4.0, 'negatividade': 0.0}</td>
+    </tr>
+    <tr>
+      <th>🤟</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':gesto_de_te_amo:'}</td>
+      <td>{NA, sentimento}</td>
+    </tr>
+    <tr>
+      <th>😊</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_sorridente_com_olhos_sorridentes:'}</td>
+      <td>{'sentimento': 0.645, 'positividade': 2243.0, 'neutral': 754.0, 'negatividade': 189.0}</td>
+    </tr>
+    <tr>
+      <th>💙</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':coração_azul:'}</td>
+      <td>{'sentimento': 0.732, 'positividade': 697.0, 'neutral': 186.0, 'negatividade': 29.0}</td>
+    </tr>
+    <tr>
+      <th>😋</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_saboreando_comida:'}</td>
+      <td>{'sentimento': 0.634, 'positividade': 498.0, 'neutral': 203.0, 'negatividade': 33.0}</td>
+    </tr>
+    <tr>
+      <th>💏</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':beijo:'}</td>
+      <td>{'sentimento': 0.395, 'positividade': 106.0, 'neutral': 46.0, 'negatividade': 33.0}</td>
+    </tr>
+    <tr>
+      <th>🖤</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':coração_preto:'}</td>
+      <td>{NA, sentimento}</td>
+    </tr>
+    <tr>
+      <th>💓</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':coração_pulsante:'}</td>
+      <td>{'sentimento': 0.672, 'positividade': 189.0, 'neutral': 55.0, 'negatividade': 15.0}</td>
+    </tr>
+    <tr>
+      <th>💟</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':coração_decorativo:'}</td>
+      <td>{'sentimento': 0.714, 'positividade': 48.0, 'neutral': 12.0, 'negatividade': 3.0}</td>
+    </tr>
+    <tr>
+      <th>💝</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':coração_com_fita:'}</td>
+      <td>{'sentimento': 0.661, 'positividade': 84.0, 'neutral': 23.0, 'negatividade': 8.0}</td>
+    </tr>
+    <tr>
+      <th>💚</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':coração_verde:'}</td>
+      <td>{'sentimento': 0.659, 'positividade': 395.0, 'neutral': 101.0, 'negatividade': 41.0}</td>
+    </tr>
+    <tr>
+      <th>😵</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_atordoado:'}</td>
+      <td>{'sentimento': 0.087, 'positividade': 42.0, 'neutral': 28.0, 'negatividade': 33.0}</td>
+    </tr>
+    <tr>
+      <th>🙏</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':mãos_juntas:'}</td>
+      <td>{'sentimento': 0.418, 'positividade': 767.0, 'neutral': 648.0, 'negatividade': 124.0}</td>
+    </tr>
+    <tr>
+      <th>😇</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_sorridente_com_auréola:'}</td>
+      <td>{'sentimento': 0.6, 'positividade': 90.0, 'neutral': 36.0, 'negatividade': 9.0}</td>
+    </tr>
+    <tr>
+      <th>❗</th>
+      <td>{'taxonomia': 'Symbols'}</td>
+      <td>{'emoji em texto': ':ponto_de_exclamação:'}</td>
+      <td>{'sentimento': 0.101, 'positividade': 51.0, 'neutral': 116.0, 'negatividade': 31.0}</td>
+    </tr>
+    <tr>
+      <th>⭐</th>
+      <td>{'taxonomia': 'Travel &amp; Places'}</td>
+      <td>{'emoji em texto': ':estrela_branca_média:'}</td>
+      <td>{'sentimento': 0.591, 'positividade': 99.0, 'neutral': 55.0, 'negatividade': 5.0}</td>
+    </tr>
+    <tr>
+      <th>🌐</th>
+      <td>{'taxonomia': 'Travel &amp; Places'}</td>
+      <td>{'emoji em texto': ':globo_com_meridianos:'}</td>
+      <td>{'sentimento': 0.667, 'positividade': 2.0, 'neutral': 1.0, 'negatividade': 0.0}</td>
+    </tr>
+    <tr>
+      <th>🐱</th>
+      <td>{'taxonomia': 'Animals &amp; Nature'}</td>
+      <td>{'emoji em texto': ':rosto_de_gato:'}</td>
+      <td>{'sentimento': 0.534, 'positividade': 49.0, 'neutral': 14.0, 'negatividade': 10.0}</td>
+    </tr>
+    <tr>
+      <th>📷</th>
+      <td>{'taxonomia': 'Objects'}</td>
+      <td>{'emoji em texto': ':câmera:'}</td>
+      <td>{'sentimento': 0.447, 'positividade': 41.0, 'neutral': 28.0, 'negatividade': 7.0}</td>
+    </tr>
+    <tr>
+      <th>👽</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':alienígena:'}</td>
+      <td>{'sentimento': 0.322, 'positividade': 60.0, 'neutral': 73.0, 'negatividade': 13.0}</td>
+    </tr>
+    <tr>
+      <th>💋</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':marca_de_beijo:'}</td>
+      <td>{'sentimento': 0.693, 'positividade': 537.0, 'neutral': 169.0, 'negatividade': 28.0}</td>
+    </tr>
+    <tr>
+      <th>🤘</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':saudação_do_rock:'}</td>
+      <td>{NA, sentimento}</td>
+    </tr>
+    <tr>
+      <th>🏾</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':pele_morena_escura:'}</td>
+      <td>{NA, sentimento}</td>
+    </tr>
+    <tr>
+      <th>🔝</th>
+      <td>{'taxonomia': 'Symbols'}</td>
+      <td>{'emoji em texto': ':seta_top:'}</td>
+      <td>{'sentimento': 0.479, 'positividade': 171.0, 'neutral': 106.0, 'negatividade': 26.0}</td>
+    </tr>
+    <tr>
+      <th>🎧</th>
+      <td>{'taxonomia': 'Objects'}</td>
+      <td>{'emoji em texto': ':fones_de_ouvido:'}</td>
+      <td>{'sentimento': 0.423, 'positividade': 78.0, 'neutral': 46.0, 'negatividade': 18.0}</td>
+    </tr>
+    <tr>
+      <th>🔄</th>
+      <td>{'taxonomia': 'Symbols'}</td>
+      <td>{'emoji em texto': ':botão_de_setas_em_sentido_anti-horário:'}</td>
+      <td>{'sentimento': 0.0, 'positividade': 0.0, 'neutral': 5.0, 'negatividade': 0.0}</td>
+    </tr>
+    <tr>
+      <th>😉</th>
+      <td>{'taxonomia': 'Smileys &amp; Emotion'}</td>
+      <td>{'emoji em texto': ':rosto_com_olho_piscando:'}</td>
+      <td>{'sentimento': 0.464, 'positividade': 857.0, 'neutral': 513.0, 'negatividade': 151.0}</td>
+    </tr>
+    <tr>
+      <th>🤝</th>
+      <td>{'taxonomia': 'People &amp; Body'}</td>
+      <td>{'emoji em texto': ':aperto_de_mãos:'}</td>
+      <td>{NA, sentimento}</td>
+    </tr>
+  </tbody>
+</table>

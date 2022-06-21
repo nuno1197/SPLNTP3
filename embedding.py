@@ -64,4 +64,4 @@ def semelhantes(emo):
     aux.append((a,c))
   return aux
 
-print(semelhantes('😀'))
+print(semelhantes('❤'))
