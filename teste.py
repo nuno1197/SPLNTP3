@@ -1,4 +1,5 @@
 import csv
+import pprint
 import emoji
 import advertools as adv
 from emosent import get_emoji_sentiment_rank
@@ -68,23 +69,33 @@ def find_taxonomia(text):
   return result
 
 with open('Tweets_pt_pt.csv', 'r',encoding="utf-8") as file:
-  reader = csv.DictReader(file, skipinitialspace=True)
+  tweets = csv.DictReader(file, skipinitialspace=True)
   aux=0
-  for l in reader:
+  for tweet in tweets:
     aux+=1
-    if(find_emoticons(l['tweet_text'])!=[]):
-      emoticons[str(l['id'])]=find_emoticons(l['tweet_text'])
-    has_emoji = bool(emoji.get_emoji_regexp().search(l['tweet_text']))
-    if(has_emoji):
-      emojis[str(l['id'])]=str(l['tweet_text'])
-    if(aux==100):
-       break 
+    mojis = extract_emojis(convert_emoticons_to_emoji(tweet["tweet_text"]))
+    for elem in mojis:
+      emojis[elem] = [{'taxonomia': adv.emoji_search(elem)['group'][0]},
+        {'emoji em texto': convert_emojis_to_text(elem)}]
+      try:
+        a=get_emoji_sentiment_rank(elem)
+        emojis[elem].append({'sentimento': a['sentiment_score'],'positividade': a['positive'], 'neutral': a['neutral'], 'negatividade': a['negative']})
+      except:
+        emojis[elem].append(('sentimento', 'NA'))
+    #if(find_emoticons(tweets['tweet_text'])!=[]):
+      #emoticons[str(l['id'])]=find_emoticons(l['tweet_text'])
+    #has_emoji = bool(emoji.get_emoji_regexp().search(l['tweet_text']))
+    #if(has_emoji):
+    #  emojis[str(l['id'])]=str(l['tweet_text'])
+    if(aux==3000):
+      pprint.pprint(emojis)
+      break 
 
-for key, value in emojis.items():
-  result[str(key)]=extract_emojis(value)
-  for emoj in result[str(key)]:
-    taxonomia[emoj]= adv.emoji_search(emoj)['group'][0]
+#for key, value in emojis.items():
+#  result[str(key)]=extract_emojis(value)
+#  for emoj in result[str(key)]:
+#    taxonomia[emoj]= adv.emoji_search(emoj)['group'][0]
 
-for k,v in emoticons.items():
-  for elem in v:
-    elem=convert_emoticons_to_emoji(elem)
+#for k,v in emoticons.items():
+#  for elem in v:
+#    elem=convert_emoticons_to_emoji(elem)
