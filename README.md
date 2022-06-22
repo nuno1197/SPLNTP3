@@ -30,6 +30,7 @@ De forma a alimentar o nosso programa, usamos o ficheiro csv de tweets fornecido
 
 ### Programado em :
 * [Python](https://www.python.org/)
+* [HTML]
 
 <p align="right">(<a href="#top">voltar para cima</a>)</p>
 
