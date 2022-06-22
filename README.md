@@ -36,7 +36,7 @@ De forma a alimentar o nosso programa, usamos o ficheiro csv de tweets fornecido
 
 
 <!-- GETTING STARTED -->
-## Para Mais Informações abrir o ficheiro Relatório.pdf que demonstra e explica cada passo de uso e desenvolvimento da aplicação.
+## Para Mais Informações abrir o ficheiro SPLN_TP2.pdf que demonstra e explica cada passo de uso e desenvolvimento da aplicação.
 
 <p align="right">(<a href="#top">voltar para cima</a>)</p>
 
