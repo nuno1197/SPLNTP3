@@ -9,7 +9,7 @@ GRUPO: https://github.com/simao17 e https://github.com/nuno1197
     <img src="http://www.dps.uminho.pt/images/EditorTexto/um_eeng.jpg" alt="Logo" width="200" height="100">
   </a>
 
-  <h3 align="center">Trabalho Prático 2 -  Scripting no Processamento de Linguagem Natural</h3>
+  <h3 align="center">Trabalho Prático 3 -  Scripting no Processamento de Linguagem Natural</h3>
 
 
   
